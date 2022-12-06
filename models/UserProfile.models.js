@@ -96,6 +96,7 @@ communities:{
 
 },{timestamps:true})
 const secret=process.env.MYSECRET;
+console.log(secret)
 UserPschema.plugin(encrypt, {  secret:secret,excludeFromEncryption:['username','email','questions','profile','answered',"phone_number","college","skills","upi_id","communities"] });
 
 const UserProfile=mongoose.model('UserProfile',UserPschema)
